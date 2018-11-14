@@ -1,5 +1,6 @@
 package com.eryxlabs.student;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -25,6 +26,9 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.password)
     EditText password;
 
+    @BindView(R.id.btnSignup)
+    Button btnSignup;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +44,13 @@ public class MainActivity extends AppCompatActivity {
                 String pass = password.getText().toString();
                 //Toast notification
                 Toast.makeText(getBaseContext(),"Details: "+user+","+pass,Toast.LENGTH_LONG).show();
+            }
+        });
+        btnSignup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent register = new Intent(MainActivity.this, RegisterActivity.class);
+                startActivity(register);
             }
         });
     }
