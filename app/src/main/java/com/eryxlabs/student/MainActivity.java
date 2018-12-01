@@ -29,6 +29,9 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.btnSignup)
     Button btnSignup;
 
+    @BindView(R.id.btnShowSaved)
+    Button btnShowSaved;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +54,13 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent register = new Intent(MainActivity.this, RegisterActivity.class);
                 startActivity(register);
+            }
+        });
+
+        btnShowSaved.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getBaseContext(),StudentListActivity.class));
             }
         });
     }

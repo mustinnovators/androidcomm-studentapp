@@ -1,5 +1,6 @@
 package com.eryxlabs.student;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -63,7 +64,7 @@ public class RegisterActivity extends AppCompatActivity {
             Toast.makeText(this,"Saved successfully!.",
                     Toast.LENGTH_SHORT).show();
 
-
+            startActivity(new Intent(this,StudentListActivity.class));
         }
     }
 
