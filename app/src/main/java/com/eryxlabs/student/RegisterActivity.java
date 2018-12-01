@@ -57,10 +57,13 @@ public class RegisterActivity extends AppCompatActivity {
                     Toast.LENGTH_SHORT).show();
         }else{
             // here we will do the saving.
-            User user = new User(fullname);
+            User user = new User(fullname,phone,email,password);
+            user.save();
+
+            Toast.makeText(this,"Saved successfully!.",
+                    Toast.LENGTH_SHORT).show();
 
 
-            //user.save();
         }
     }
 
